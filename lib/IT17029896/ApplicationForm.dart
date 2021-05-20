@@ -45,6 +45,7 @@ class MyHomePageState extends State<MyHomePage> with CustomWidgets {
         name = "High School";
       } else if (each != radioList.none) {
         name = each.toString().replaceAll("radioList.", "") + "\'s";
+        name = name[0].toUpperCase() + name.substring(1);
       } else {
         name = each.toString().replaceAll("radioList.", "");
       }
@@ -81,38 +82,38 @@ class MyHomePageState extends State<MyHomePage> with CustomWidgets {
           padding: EdgeInsets.all(8.0),
           children: <Widget>[
             ListTile(
-              leading: getTextWidget(
+              title: getTextWidget(
                   "Full Name", 15, 0, FontWeight.normal, Colors.black54),
-              title: getTextFormField(250.0, "Full Name", Icons.face,
+              trailing: getTextFormField(220.0, "Full Name", Icons.face,
                   mainColor: Colors.black54),
             ),
             ListTile(
-                leading: getTextWidget(
+                title: getTextWidget(
                     "Address", 15, 0, FontWeight.normal, Colors.black54),
-                title: getTextFormField(250.0, "Address", Icons.gps_fixed,
+                trailing: getTextFormField(220.0, "Address", Icons.gps_fixed,
                     mainColor: Colors.black54)),
             ListTile(
-                leading: getTextWidget(
+                title: getTextWidget(
                     "Email", 15, 0, FontWeight.normal, Colors.black54),
-                title: getTextFormField(250.0, "Email", Icons.email,
+                trailing: getTextFormField(220.0, "Email", Icons.email,
                     mainColor: Colors.black54)),
             ListTile(
-                leading: getTextWidget(
+                title: getTextWidget(
                     "Phone", 15, 0, FontWeight.normal, Colors.black54),
-                title: getTextFormField(250.0, "Phone", Icons.phone,
+                trailing: getTextFormField(220.0, "Phone", Icons.phone,
                     mainColor: Colors.black54)),
             ListTile(
-                title: getTextWidget("\nhighest level of education:", 15, 0,
-                    FontWeight.normal, Colors.black)),
+                title: getTextWidget("\nYour highest level of education:", 15,
+                    0, FontWeight.normal, Colors.black)),
             ListTile(
                 title: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[...radioOptions],
             )),
             ListTile(
-                leading: getTextWidget(
+                title: getTextWidget(
                     "Link to CV", 15, 0, FontWeight.normal, Colors.black54),
-                title: getTextFormField(250.0, "CV link", Icons.work,
+                trailing: getTextFormField(220.0, "CV link", Icons.work,
                     mainColor: Colors.black54)),
             ListTile(
                 trailing: getOutlinedButton("Submit", () {
