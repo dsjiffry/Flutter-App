@@ -1,15 +1,6 @@
 import 'package:assignment_2021_jun_we_12/IT17029896/JobListings.dart';
 import 'package:flutter/material.dart';
 
-/**
- * References:
- * https://flutter.dev/docs/development/ui/widgets/material
- * https://firebase.flutter.dev/docs/overview
- * https://pub.dev/packages/smooth_star_rating
- * https://pub.dev/packages/flutter_signin_button
- * 
- */
-
 void main() {
   runApp(MyApp());
 }
@@ -50,7 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Listings()),
+                  MaterialPageRoute(builder: (context) => JobListings()),
                 );
               },
               child: const Text('View Job Listings'),

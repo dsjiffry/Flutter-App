@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
  * https://firebase.flutter.dev/docs/overview
  * https://pub.dev/packages/smooth_star_rating
  * https://pub.dev/packages/flutter_signin_button
- * 
+ * https://stackoverflow.com/questions/46640116/make-flutter-application-fullscreen
  */
 
 void main() {
@@ -50,7 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Listings()),
+                  MaterialPageRoute(builder: (context) => JobListings()),
                 );
               },
               child: const Text('View Job Listings'),

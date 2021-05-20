@@ -1,3 +1,4 @@
+import 'package:assignment_2021_jun_we_12/IT17029896/ApplicationForm.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
 
@@ -42,34 +43,44 @@ mixin CustomWidgets {
   }
 
   /// returns an Text Form Field Widget
-  Widget getTextFormField(String text, IconData icon) {
-    return TextFormField(
-      style: TextStyle(color: Colors.white),
-      decoration: InputDecoration(
-        labelText: text,
-        labelStyle: TextStyle(color: Colors.white),
-        border: const OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.white)),
-        focusedBorder: const OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.white)),
-        enabledBorder: const OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.white)),
-        errorBorder: const OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.white)),
-        focusedErrorBorder: const OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.white)),
-        fillColor: Colors.white,
-        prefixIcon: Icon(
-          icon,
-          color: Colors.white,
-        ),
-      ),
-    );
+  Widget getTextFormField(double containerWidth, String text, IconData icon,
+      {Color mainColor: Colors.white}) {
+    return Container(
+        width: containerWidth,
+        child: TextFormField(
+          style: TextStyle(color: mainColor),
+          decoration: InputDecoration(
+            labelText: text,
+            labelStyle: TextStyle(color: mainColor),
+            border:
+                OutlineInputBorder(borderSide: BorderSide(color: mainColor)),
+            focusedBorder:
+                OutlineInputBorder(borderSide: BorderSide(color: mainColor)),
+            enabledBorder:
+                OutlineInputBorder(borderSide: BorderSide(color: mainColor)),
+            errorBorder:
+                OutlineInputBorder(borderSide: BorderSide(color: mainColor)),
+            focusedErrorBorder:
+                OutlineInputBorder(borderSide: BorderSide(color: mainColor)),
+            fillColor: mainColor,
+            prefixIcon: Icon(
+              icon,
+              color: mainColor,
+            ),
+          ),
+        ));
   }
 
   /// returns an Card Widget
-  Widget getCard(String company, String description, String imageURL,
-      String location, String rate, double rating, String title) {
+  Widget getCard(
+      String company,
+      String description,
+      String imageURL,
+      String location,
+      String rate,
+      double rating,
+      String title,
+      BuildContext context) {
     return Card(
         child: Column(children: <Widget>[
       Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: <Widget>[
@@ -89,7 +100,12 @@ mixin CustomWidgets {
             color: Colors.yellow,
             borderColor: Colors.yellow,
             spacing: 0.0),
-        getOutlinedButton('apply', () {}, borderColor: Colors.blue)
+        getOutlinedButton('apply', () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => ApplicationForm()),
+          );
+        }, borderColor: Colors.blue)
       ]),
       getTextWidget(title, 20, 0, FontWeight.bold, Colors.grey),
       getTextWidget(company, 15, 1, FontWeight.normal, Colors.grey),

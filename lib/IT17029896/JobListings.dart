@@ -6,10 +6,10 @@ import 'package:assignment_2021_jun_we_12/IT17029896/CustomWidgets.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 void main() {
-  runApp(Listings());
+  runApp(JobListings());
 }
 
-class Listings extends StatelessWidget {
+class JobListings extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setEnabledSystemUIOverlays([]); //Make app fullscreen
@@ -19,7 +19,7 @@ class Listings extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: MyHomePage(
-        title: 'Listings Page',
+        title: 'Job Listings',
       ),
     );
   }
@@ -58,7 +58,8 @@ class MyHomePageState extends State<MyHomePage> with CustomWidgets {
                   document.data()['location'],
                   document.data()['rate'],
                   document.data()['rating'].toDouble(),
-                  document.data()['title']));
+                  document.data()['title'],
+                  context));
             },
           );
         } else {
@@ -75,7 +76,8 @@ class MyHomePageState extends State<MyHomePage> with CustomWidgets {
             '',
             '',
             5.0,
-            ''));
+            '',
+            context));
         setState(() {});
       }
     }
@@ -84,27 +86,23 @@ class MyHomePageState extends State<MyHomePage> with CustomWidgets {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.title),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          tooltip: 'go Back',
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => MyApp()),
+            );
+          },
+        ),
+      ),
       body: Container(
         constraints: BoxConstraints.expand(),
         child: ListView(
           children: <Widget>[
-            Row(mainAxisAlignment: MainAxisAlignment.start, children: <Widget>[
-              BackButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => MyApp()),
-                  );
-                },
-              ),
-              Text(
-                '\t\t\t Job Listings',
-                style: TextStyle(
-                    fontWeight: FontWeight.normal,
-                    color: Colors.grey,
-                    fontSize: 20),
-              ),
-            ]),
             ...listingCards,
           ],
         ),
