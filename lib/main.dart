@@ -4,10 +4,12 @@ import 'package:flutter/material.dart';
 /**
  * References:
  * https://flutter.dev/docs/development/ui/widgets/material
+ * https://flutter.dev/docs/cookbook
  * https://firebase.flutter.dev/docs/overview
  * https://pub.dev/packages/smooth_star_rating
  * https://pub.dev/packages/flutter_signin_button
  * https://stackoverflow.com/questions/46640116/make-flutter-application-fullscreen
+ * https://firebase.google.com/docs/firestore
  */
 
 void main() {

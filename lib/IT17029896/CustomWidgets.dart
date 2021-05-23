@@ -44,11 +44,13 @@ mixin CustomWidgets {
 
   /// returns an Text Form Field Widget
   Widget getTextFormField(double containerWidth, String text, IconData icon,
+      TextEditingController controller,
       {Color mainColor: Colors.white}) {
     return Container(
         width: containerWidth,
         child: TextFormField(
           style: TextStyle(color: mainColor),
+          controller: controller,
           decoration: InputDecoration(
             labelText: text,
             labelStyle: TextStyle(color: mainColor),

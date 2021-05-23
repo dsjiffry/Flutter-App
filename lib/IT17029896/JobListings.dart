@@ -18,29 +18,30 @@ class JobListings extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(
+      home: JobListingHomePage(
         title: 'Job Listings',
       ),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+class JobListingHomePage extends StatefulWidget {
+  JobListingHomePage({Key key, this.title}) : super(key: key);
   final String title;
 
   @override
-  MyHomePageState createState() => MyHomePageState();
+  JobListingHomePageState createState() => JobListingHomePageState();
 }
 
-class MyHomePageState extends State<MyHomePage> with CustomWidgets {
+class JobListingHomePageState extends State<JobListingHomePage>
+    with CustomWidgets {
   List<Widget> listingCards;
 
-  MyHomePageState() {
-    searchForDocs();
+  JobListingHomePageState() {
+    getJobListings();
   }
 
-  void searchForDocs() async {
+  void getJobListings() async {
     listingCards = [];
     try {
       await Firebase.initializeApp();
