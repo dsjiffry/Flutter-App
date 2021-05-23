@@ -48,6 +48,7 @@ mixin CustomWidgets {
       {Color mainColor: Colors.white}) {
     return Container(
         width: containerWidth,
+        padding: EdgeInsets.all(3.0),
         child: TextFormField(
           style: TextStyle(color: mainColor),
           controller: controller,
