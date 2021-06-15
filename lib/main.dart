@@ -46,16 +46,55 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             OutlinedButton(
+              style: OutlinedButton.styleFrom(
+                primary: Colors.deepPurple,
+              ),
+              onPressed: () {
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(builder: (context) => ()),
+                // );
+              },
+              child: const Text('Login/Register (IT17160162)'),
+            ),
+            OutlinedButton(
+              style: OutlinedButton.styleFrom(
+                primary: Colors.deepPurple,
+              ),
               onPressed: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => JobListings()),
                 );
               },
-              child: const Text('View Job Listings'),
+              child: const Text('View Job Listings (IT17029896)'),
+            ),
+            OutlinedButton(
+              style: OutlinedButton.styleFrom(
+                primary: Colors.deepPurple,
+              ),
+              onPressed: () {
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(builder: (context) => ()),
+                // );
+              },
+              child: const Text('Adding Job Listings (IT17163682)'),
+            ),
+            OutlinedButton(
+              style: OutlinedButton.styleFrom(
+                primary: Colors.deepPurple,
+              ),
+              onPressed: () {
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(builder: (context) => ()),
+                // );
+              },
+              child: const Text('App Settings (IT17173100)'),
             ),
           ],
         ),
