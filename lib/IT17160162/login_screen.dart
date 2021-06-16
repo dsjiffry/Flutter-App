@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:helloworld/home_page.dart';
-import 'package:helloworld/register_page.dart';
+import 'home_page.dart';
+import 'register_page.dart';
 import 'constants.dart';
 import 'colors.dart';
 import 'package:firebase_auth/firebase_auth.dart';
