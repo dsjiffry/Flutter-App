@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:assignment_2021_jun_we_12/IT17173100/components/qa_card.dart';
 import 'package:assignment_2021_jun_we_12/IT17173100/models/QA.dart';

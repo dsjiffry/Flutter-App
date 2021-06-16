@@ -20,18 +20,16 @@ class _NoteScreenState extends State<QAScreen> {
   String answerString = '';
 
   FirebaseFirestore _firestore;
-  Future<void> init() async {
-    await Firebase.initializeApp();
-    _firestore = FirebaseFirestore.instance;
-  }
-
   TextEditingController controllerTitle;
   TextEditingController controllerNote;
 
   @override
-  void initState() {
+  void initState() async {
     // TODO: implement initState
     super.initState();
+
+    await Firebase.initializeApp();
+    await (_firestore = FirebaseFirestore.instance);
 
     qa = widget.note;
     if (qa != null) {
