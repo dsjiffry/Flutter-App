@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:helloworld/colors.dart';
+import 'colors.dart';
 import 'constants.dart';
 import 'icons.dart';
 
