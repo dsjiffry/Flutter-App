@@ -1,4 +1,5 @@
 import 'package:assignment_2021_jun_we_12/IT17029896/JobListings.dart';
+import 'package:assignment_2021_jun_we_12/IT17163482/addJobListings.dart';
 import 'package:flutter/material.dart';
 
 import 'IT17160162/login_screen.dart';
@@ -79,10 +80,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 primary: Colors.deepPurple,
               ),
               onPressed: () {
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(builder: (context) => ()),
-                // );
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => AddJobListings()),
+                );
               },
               child: const Text('Adding Job Listings (IT17163682)'),
             ),

@@ -1,19 +1,18 @@
-import 'package:assignment_2021_jun_we_12/IT17029896/JobListings.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(AddJobListings());
 }
 
-class MyApp extends StatelessWidget {
+class AddJobListings extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'IT17163682',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'IT17163682'),
     );
   }
 }
@@ -36,17 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            OutlinedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => JobListings()),
-                );
-              },
-              child: const Text('View Job Listings'),
-            ),
-          ],
+          children: <Widget>[Text("Will be uploaded to the late submissions")],
         ),
       ),
     );
