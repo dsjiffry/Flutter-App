@@ -6,4 +6,4 @@ const bgImage = "assets/ultra.jpg";
 const String loginName = "LOGIN";
 const String registerPage = "Register Yourself";
 const String register = "Register";
-const homeBg = "assets/homebg.jpg";
+
