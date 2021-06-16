@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:assignment_2021_jun_we_12/IT17173100/constants.dart';
 import 'package:assignment_2021_jun_we_12/IT17173100/models/QA.dart';
@@ -18,7 +19,11 @@ class _NoteScreenState extends State<QAScreen> {
   String questionString = '';
   String answerString = '';
 
-  FirebaseFirestore _firestore = FirebaseFirestore.instance;
+  FirebaseFirestore _firestore;
+  Future<void> init() async {
+    await Firebase.initializeApp();
+    _firestore = FirebaseFirestore.instance;
+  }
 
   TextEditingController controllerTitle;
   TextEditingController controllerNote;

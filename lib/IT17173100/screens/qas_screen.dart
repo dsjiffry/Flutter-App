@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:assignment_2021_jun_we_12/IT17173100/components/qas_stream.dart';
 import 'package:assignment_2021_jun_we_12/IT17173100/screens/qa_screen.dart';
 
@@ -11,7 +12,11 @@ class QAsScreen extends StatefulWidget {
 }
 
 class _QAsScreenState extends State<QAsScreen> {
-  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+  FirebaseFirestore _firestore;
+  Future<void> init() async {
+    await Firebase.initializeApp();
+    _firestore = FirebaseFirestore.instance;
+  }
 
   @override
   Widget build(BuildContext context) {
