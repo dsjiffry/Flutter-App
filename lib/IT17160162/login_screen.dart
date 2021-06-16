@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'home_page.dart';
 import 'register_page.dart';
@@ -15,6 +16,7 @@ class _LoginScreenState extends State<LoginScreen> {
   String _email, _password; //local variables
 
   void signIn(BuildContext context) async {
+    await Firebase.initializeApp();
     await FirebaseAuth.instance
         .signInWithEmailAndPassword(email: _email, password: _password)
         .catchError((onError) {

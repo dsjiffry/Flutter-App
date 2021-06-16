@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'home_page.dart';
 import 'constants.dart';
@@ -14,6 +15,7 @@ class _RegisterPageState extends State<RegisterPage> {
   String _email, _password; //local variables
 
   void registerUser(BuildContext context) async {
+    await Firebase.initializeApp();
     await FirebaseAuth.instance
         .createUserWithEmailAndPassword(email: _email, password: _password)
         .catchError((onError) {
