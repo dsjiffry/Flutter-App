@@ -1,24 +1,24 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:notes_app/constants.dart';
-import 'package:notes_app/models/QA.dart';
+import 'package:assignment_2021_jun_we_12/IT17173100/constants.dart';
+import 'package:assignment_2021_jun_we_12/IT17173100/models/QA.dart';
 
-class NoteScreen extends StatefulWidget {
+class QAScreen extends StatefulWidget {
   static final String routeName = '/qa';
-  Note note;
+  QA note;
 
-  NoteScreen(this.note);
+  QAScreen(this.note);
 
   @override
   _NoteScreenState createState() => _NoteScreenState();
 }
 
-class _NoteScreenState extends State<NoteScreen> {
+class _NoteScreenState extends State<QAScreen> {
   QA qa;
   String questionString = '';
   String answerString = '';
 
-  Firestore _firestore = Firestore.instance;
+  FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
   TextEditingController controllerTitle;
   TextEditingController controllerNote;
@@ -64,7 +64,7 @@ class _NoteScreenState extends State<NoteScreen> {
               color: Colors.white,
             ),
             onPressed: () {
-              _firestore.collection('notes').document(qa.id).delete();
+              _firestore.collection('notes').doc(qa.id).delete();
               Navigator.pop(context);
             },
           ),
@@ -115,8 +115,8 @@ class _NoteScreenState extends State<NoteScreen> {
     } else {
       _firestore
           .collection('questionsandanswers')
-          .document(qa.id)
-          .updateData({'question': questionString, 'answer': answerString});
+          .doc(qa.id)
+          .update({'question': questionString, 'answer': answerString});
     }
   }
 }

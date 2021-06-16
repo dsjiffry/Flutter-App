@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:notes_app/constants.dart';
-import 'package:notes_app/models/QA.dart';
+import 'package:assignment_2021_jun_we_12/IT17173100/constants.dart';
+import 'package:assignment_2021_jun_we_12/IT17173100/models/QA.dart';
 
 class QACard extends StatelessWidget {
   final QA qa;

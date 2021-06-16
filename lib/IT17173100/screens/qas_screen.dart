@@ -1,10 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:notes_app/components/qas_stream.dart';
-import 'package:notes_app/components/qa_card.dart';
-import 'package:notes_app/constants.dart';
-import 'package:notes_app/models/QA.dart';
-import 'package:notes_app/screens/qa_screen.dart';
+import 'package:assignment_2021_jun_we_12/IT17173100/components/qas_stream.dart';
+import 'package:assignment_2021_jun_we_12/IT17173100/components/qa_card.dart';
+import 'package:assignment_2021_jun_we_12/IT17173100/constants.dart';
+import 'package:assignment_2021_jun_we_12/IT17173100/models/QA.dart';
+import 'package:assignment_2021_jun_we_12/IT17173100/screens/qa_screen.dart';
 
 class QAsScreen extends StatefulWidget {
   static final String routeName = '/';
@@ -14,7 +14,7 @@ class QAsScreen extends StatefulWidget {
 }
 
 class _QAsScreenState extends State<QAsScreen> {
-  final Firestore _firestore = Firestore.instance;
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
   @override
   Widget build(BuildContext context) {

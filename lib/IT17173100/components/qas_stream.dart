@@ -1,11 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:notes_app/components/qa_card.dart';
-import 'package:notes_app/models/QA.dart';
-import 'package:notes_app/screens/qa_screen.dart';
+import 'package:assignment_2021_jun_we_12/IT17173100/components/qa_card.dart';
+import 'package:assignment_2021_jun_we_12/IT17173100/models/QA.dart';
+import 'package:assignment_2021_jun_we_12/IT17173100/screens/qa_screen.dart';
 
 class QAsStream extends StatelessWidget {
-  final Firestore _firestore;
+  final FirebaseFirestore _firestore;
 
   QAsStream({firestore}) : _firestore = firestore;
 
@@ -21,7 +21,7 @@ class QAsStream extends StatelessWidget {
         }
 
         final results = snapshot.data.documents;
-        List<NoteCard> qaCards = [];
+        List<QACard> qaCards = [];
         for (var result in results) {
           QA qaObject = QA(
               id: result.documentID,
