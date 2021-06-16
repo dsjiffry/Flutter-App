@@ -1,8 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'colors.dart';
-import 'constants.dart';
-import 'icons.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -27,7 +25,7 @@ class _HomePageState extends State<HomePage> {
               "Here you go",
               style: Theme.of(context)
                   .textTheme
-                  .subtitle2!
+                  .subtitle2
                   .copyWith(color: Colors.black45, fontSize: 8),
             ),
             InkWell(
@@ -37,7 +35,7 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   Text(
                     "Your Profile",
-                    style: Theme.of(context).textTheme.headline6!.copyWith(
+                    style: Theme.of(context).textTheme.headline6.copyWith(
                         color: Colors.black,
                         fontWeight: FontWeight.bold,
                         fontSize: 12),
@@ -96,7 +94,7 @@ class _HomePageState extends State<HomePage> {
                 "Job Types",
                 style: Theme.of(context)
                     .textTheme
-                    .headline6!
+                    .headline6
                     .copyWith(fontWeight: FontWeight.bold, fontSize: 15),
               ),
               Container(
@@ -125,7 +123,7 @@ class _HomePageState extends State<HomePage> {
                             listCards[index].title,
                             style: Theme.of(context)
                                 .textTheme
-                                .headline6!
+                                .headline6
                                 .copyWith(
                                     fontWeight: FontWeight.bold, fontSize: 12),
                           )
@@ -202,14 +200,14 @@ class _HomePageState extends State<HomePage> {
     return Text(title,
         style: Theme.of(context)
             .textTheme
-            .headline6!
+            .headline6
             .copyWith(fontWeight: FontWeight.bold, fontSize: 15));
   }
 }
 
 class TypeModel {
   String image = "", title = "", remoteUrl = "";
-  TypeModel(this.image, this.title, {required this.remoteUrl});
+  TypeModel(this.image, this.title, {this.remoteUrl});
 }
 
 List<TypeModel> listCards = [

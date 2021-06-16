@@ -1,6 +1,8 @@
 import 'package:assignment_2021_jun_we_12/IT17029896/JobListings.dart';
 import 'package:flutter/material.dart';
 
+import 'IT17160162/login_screen.dart';
+
 /**
  * References:
  * https://flutter.dev/docs/development/ui/widgets/material
@@ -53,10 +55,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 primary: Colors.deepPurple,
               ),
               onPressed: () {
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(builder: (context) => ()),
-                // );
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginScreen()),
+                );
               },
               child: const Text('Login/Register (IT17160162)'),
             ),

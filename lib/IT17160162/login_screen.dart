@@ -4,7 +4,6 @@ import 'register_page.dart';
 import 'constants.dart';
 import 'colors.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -13,7 +12,7 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  late String _email, _password; //local variables
+  String _email, _password; //local variables
 
   void signIn(BuildContext context) async {
     await FirebaseAuth.instance
@@ -114,10 +113,10 @@ class _LoginScreenState extends State<LoginScreen> {
                       horizontal: 10.0, vertical: 10),
                   child: TextFormField(
                     onSaved: (value) {
-                      _email = value!;
+                      _email = value;
                     },
                     validator: (emailvalue) {
-                      if (emailvalue!.isEmpty)
+                      if (emailvalue.isEmpty)
                         return "Please enter email";
                       else if (!RegExp(
                               r"[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?)*$")
@@ -140,10 +139,10 @@ class _LoginScreenState extends State<LoginScreen> {
                       horizontal: 10.0, vertical: 10),
                   child: TextFormField(
                     onSaved: (value) {
-                      _password = value!;
+                      _password = value;
                     },
                     validator: (password) {
-                      if (password!.isEmpty)
+                      if (password.isEmpty)
                         return "Please enter password";
                       else if (password.length < 8 || password.length > 15)
                         return "Password length should between 8-15";
@@ -172,8 +171,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.all(Radius.circular(40))),
                       onPressed: () {
-                        if (formKey.currentState!.validate()) {
-                          formKey.currentState!.save();
+                        if (formKey.currentState.validate()) {
+                          formKey.currentState.save();
                           signIn(context);
                           // if (_email == "test@gmail.com" &&
                           //     _password == "root@123") {

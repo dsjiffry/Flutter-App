@@ -1,7 +1,6 @@
 import 'package:assignment_2021_jun_we_12/IT17029896/JobListings.dart';
 import 'package:flutter/material.dart';
 import 'login_screen.dart';
-import 'constants.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,7 +16,6 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }

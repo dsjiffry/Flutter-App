@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'home_page.dart';
 import 'constants.dart';
 import 'colors.dart';
-import 'login_screen.dart';
 
 class RegisterPage extends StatefulWidget {
   @override
@@ -12,7 +11,7 @@ class RegisterPage extends StatefulWidget {
 
 class _RegisterPageState extends State<RegisterPage> {
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  late String _name, _email, _password; //local variables
+  String _email, _password; //local variables
 
   void registerUser(BuildContext context) async {
     await FirebaseAuth.instance
@@ -107,11 +106,9 @@ class _RegisterPageState extends State<RegisterPage> {
                   padding: const EdgeInsets.symmetric(
                       horizontal: 10.0, vertical: 10),
                   child: TextFormField(
-                    onChanged: (value) {
-                      _name = value;
-                    },
+                    onChanged: (value) {},
                     validator: (namevalue) {
-                      if (namevalue!.isEmpty) return "Please enter name";
+                      if (namevalue.isEmpty) return "Please enter name";
                       // else if (!RegExp(
                       //         r"[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?)*$")
                       //     .hasMatch(namevalue))
@@ -138,7 +135,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       _email = value;
                     },
                     validator: (emailvalue) {
-                      if (emailvalue!.isEmpty)
+                      if (emailvalue.isEmpty)
                         return "Please enter email";
                       else if (!RegExp(
                               r"[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?)*$")
@@ -166,7 +163,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       _password = value;
                     },
                     validator: (password) {
-                      if (password!.isEmpty)
+                      if (password.isEmpty)
                         return "Please enter password";
                       else if (password.length < 8 || password.length > 15)
                         return "Password length should between 8-15";
@@ -192,7 +189,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.all(Radius.circular(40))),
                       onPressed: () async {
-                        if (formKey.currentState!.validate()) {
+                        if (formKey.currentState.validate()) {
                           registerUser(context);
                         }
                         // setState(() {
