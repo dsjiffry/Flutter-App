@@ -1,9 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:assignment_2021_jun_we_12/IT17173100/components/qas_stream.dart';
-import 'package:assignment_2021_jun_we_12/IT17173100/components/qa_card.dart';
-import 'package:assignment_2021_jun_we_12/IT17173100/constants.dart';
-import 'package:assignment_2021_jun_we_12/IT17173100/models/QA.dart';
 import 'package:assignment_2021_jun_we_12/IT17173100/screens/qa_screen.dart';
 
 class QAsScreen extends StatefulWidget {

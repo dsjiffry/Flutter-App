@@ -1,19 +1,17 @@
 import 'package:assignment_2021_jun_we_12/IT17029896/JobListings.dart';
 import 'package:assignment_2021_jun_we_12/IT17163482/addJobListings.dart';
+import 'package:assignment_2021_jun_we_12/IT17173100/screens/qas_screen.dart';
+import 'package:assignment_2021_jun_we_12/IT17160162/login_screen.dart';
 import 'package:flutter/material.dart';
 
-import 'IT17160162/login_screen.dart';
-
-/**
- * References:
- * https://flutter.dev/docs/development/ui/widgets/material
- * https://flutter.dev/docs/cookbook
- * https://firebase.flutter.dev/docs/overview
- * https://pub.dev/packages/smooth_star_rating
- * https://pub.dev/packages/flutter_signin_button
- * https://stackoverflow.com/questions/46640116/make-flutter-application-fullscreen
- * https://firebase.google.com/docs/firestore
- */
+/// References:
+/// https://flutter.dev/docs/development/ui/widgets/material
+/// https://flutter.dev/docs/cookbook
+/// https://firebase.flutter.dev/docs/overview
+/// https://pub.dev/packages/smooth_star_rating
+/// https://pub.dev/packages/flutter_signin_button
+/// https://stackoverflow.com/questions/46640116/make-flutter-application-fullscreen
+/// https://firebase.google.com/docs/firestore
 
 void main() {
   runApp(MyApp());
@@ -27,7 +25,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: '2021_jun_we_12'),
     );
   }
 }
@@ -92,10 +90,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 primary: Colors.deepPurple,
               ),
               onPressed: () {
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(builder: (context) => ()),
-                // );
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => QAsScreen()),
+                );
               },
               child: const Text('App Settings (IT17173100)'),
             ),
